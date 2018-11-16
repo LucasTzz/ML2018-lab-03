@@ -11,13 +11,12 @@ if __name__ == '__main__':
 
     # convert the test image to gray image as opencv face detector expects gray images
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
     # detect
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
 
     # draw the detected faces in the test image
-    for (x,y,w,h) in faces:
-        cv2.rectangle(img, (x,y), (x+w, y+h), (255, 0, 0), 2)
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
 
     # show and save the result
     cv2.imshow('img', img)
